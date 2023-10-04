@@ -8,7 +8,7 @@ Este endpoint é resposável pela entrega de informações das peças que aprese
 
 | Método | URI                          | Exemplo                                                   | 
 | --- |------------------------------|:----------------------------------------------------------| 
-| GET | `/lista-falhas/v1`           | api-afericao.kdltelegestao.com/lista-falhas/v1            |
+| GET | `/lista-falhas/v1/maua`           | api-afericao.kdltelegestao.com/lista-falhas/v1/maua            |
 
 ##### Parâmetros opcionais:
 | Identificador | Tipo   | Default   | Descrição                                                                                                                                                                | 

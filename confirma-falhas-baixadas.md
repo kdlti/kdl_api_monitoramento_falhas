@@ -14,7 +14,7 @@ Esta regra visa preservar a ordem e eficácia do sistema de monitoramento, de mo
 
 | Método | URI                          | Exemplo                                                   | 
 |--------|------------------------------|:----------------------------------------------------------| 
-| POST   | `/confirma-falhas-baixadas/v1`           | api-afericao.kdltelegestao.com/confirma-falhas-baixadas/v1            |
+| POST   | `/confirma-falhas-baixadas/v1/maua`           | api-afericao.kdltelegestao.com/confirma-falhas-baixadas/v1/maua            |
 
 ##### Exemplo de uso
 ```go
@@ -28,7 +28,7 @@ jsonData = json.dumps(listaUint32)
 headers = {"Content-Type": "application/json"}
 
 // fazer a requisição POST
-response = requests.post(url="api-afericao.kdltelegestao.com/confirma-falhas-baixadas/v1", data=jsonData, headers=headers)
+response = requests.post(url="api-afericao.kdltelegestao.com/confirma-falhas-baixadas/v1/maua", data=jsonData, headers=headers)
 
 ```
 
