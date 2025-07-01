@@ -40,7 +40,7 @@ print(resp.json())
 
 ## Contato
 
-Dúvidas ou suporte: [email@dominio.com](mailto:email@dominio.com)
+Dúvidas ou suporte: [email@dominio.com](mailto:suporte@kdliluminacao.com.br)
 
 ---
 
