@@ -1,20 +1,55 @@
-# Api de Integração Sistema KDL / UNIDESK-SIIP
+# Api de Integração Sistema KDL
 
 ### KDL API REST
 *versão 0.0.3*
 
-Este endpoint é resposável pela entrega de informações das peças que apresentam falhas na telegestão.
+Este endpoint é responsável pela entrega de informações das peças que apresentam falhas na telegestão.
 
+| Método | URI                          | Exemplo                                                                 |
+| ------ |------------------------------|:------------------------------------------------------------------------|
+| GET    | `/lista-falhas/v1/maua`      | https://simcidadesinteligentes.com.br:44300/lista-falhas/v1/maua        |
 
-| Método | URI                          | Exemplo                                                   | 
-| --- |------------------------------|:----------------------------------------------------------| 
-| GET | `/lista-falhas/v1/maua`           | api-afericao.kdltelegestao.com/lista-falhas/v1/maua            |
+## Autenticação
+
+Para acessar este endpoint, é necessário incluir o token de autenticação no header da requisição. Consulte o arquivo `autenticacao.md` para saber como obter o token.
+
+Inclua o token no header `Authorization`:
+
+```
+Authorization: Bearer <token>
+```
+
+##### Exemplo de uso em Python
+
+```python
+import requests
+
+headers = {
+    "Authorization": "Bearer <token>"
+}
+
+params = {
+    "limit": 200,
+    "offset": 400
+}
+
+response = requests.get(
+    url="https://simcidadesinteligentes.com.br:44300/lista-falhas/v1/maua",
+    headers=headers,
+    params=params
+)
+
+print(response.status_code)
+print(response.json())
+```
+
+> Substitua `<token>` pelo token obtido no processo de autenticação.
 
 ##### Parâmetros opcionais:
 | Identificador | Tipo   | Default   | Descrição                                                                                                                                                                | 
 | -------------- | -------| :--------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------| 
 | limit          | `int`  |  **1000** | Quantidade de itens retornados.                                                                                                                                          |
-| offset     | `int`  |  **0**    | Paginação do resultado.                                                                                                                                                  |
+| offset         | `int`  |  **0**    | Paginação do resultado.                                                                                                                                                  |
 
 O parâmetro limit especifica o número máximo de documentos que devem ser retornados pela consulta. Por exemplo, se você definir limit como 10 em uma consulta, ela retornará no máximo 10 documentos. Se houver mais documentos que correspondam à consulta, eles serão ignorados.
 
@@ -26,7 +61,7 @@ O parâmetro offset é usado para permitir a paginação dos resultados. Ele esp
 
 
 ### Exemplo do Resultado:
-``` json
+```json
 {
     "data": {
         "type": "lista-falhas",
@@ -51,15 +86,15 @@ O parâmetro offset é usado para permitir a paginação dos resultados. Ele esp
 ```
 ### Dicionário do Resultado:
 ##### Bloco PRINCIPAL:
-| Identificador | Tipo     | Descrição                                                           | 
-|:--------------|----------|:--------------------------------------------------------------------| 
-| data          | `object` | Resultado da consulta                                               | 
-| total         | `int`    | Quantidade de itens encontrados                                     |
-| totalRetornado | `int`  | Quantidade de itens retornados                                     |
-| limit         | `int`    | Quantidade de itens retornados por página                           | 
-| offset        | `int`    | O parâmetro usado para permitir a paginação dos resultados |
-| success       | `bool`   | Status de sucesso/falha da interação                                | 
-| elapsedTime   | `string` | Tempo de duração da consulta                                        | 
+| Identificador   | Tipo     | Descrição                                                           | 
+|:--------------- |----------|:--------------------------------------------------------------------| 
+| data            | `object` | Resultado da consulta                                               | 
+| total           | `int`    | Quantidade de itens encontrados                                     |
+| totalRetornado  | `int`    | Quantidade de itens retornados                                      |
+| limit           | `int`    | Quantidade de itens retornados por página                           | 
+| offset          | `int`    | O parâmetro usado para permitir a paginação dos resultados          |
+| success         | `bool`   | Status de sucesso/falha da interação                                | 
+| elapsedTime     | `string` | Tempo de duração da consulta                                        | 
 
 ##### Bloco DATA:
 | Identificador | Tipo            | Descrição                            | 
@@ -71,12 +106,12 @@ O parâmetro offset é usado para permitir a paginação dos resultados. Ele esp
 | Identificador         | Tipo     | Descrição                             | 
 |:----------------------|----------|:--------------------------------------| 
 | id            | `uint32` | Identificador do evento               | 
-| idSimuc            | `string` | Identificador da peça com falha       |
-| idSimcon              | `string` | Identificador do concentrador         |
-| etiqueta         | `string` | Identificador da etiqueta             | 
-| subPrefeitura        | `string` | Identificador da SubPrefeitura        | 
-| dateTime              | `string` | Dia/Hora/Minuto do registro do evento |
-| status             | `string` | Código do evento                      |
+| idSimuc       | `string` | Identificador da peça com falha       |
+| idSimcon      | `string` | Identificador do concentrador         |
+| etiqueta      | `string` | Identificador da etiqueta             | 
+| subPrefeitura | `string` | Identificador da SubPrefeitura        | 
+| dateTime      | `string` | Dia/Hora/Minuto do registro do evento |
+| status        | `string` | Código do evento                      |
 
 
 ##### Bloco Código de Status:
@@ -88,11 +123,11 @@ O parâmetro offset é usado para permitir a paginação dos resultados. Ele esp
 | 5      | LUMINÁRIA com falha e defeito                                                                        |
 | 51     | SIMUC sem comunicação (evento informado a cada 6h)                                                   | 
 | 52     | SIMUC sem leituras coletadas desde a instalação (evento informado a cada 6h, após 48h da instalação) | 
-| 203    | SIMCON offline, sem conexão (30+ minutos)                                                                |
-| 204    | SIMCON offline, sem conexão (60+ minutos)                                                                                     |
-| 205    | SIMCOM em bateria                                                                                     |
-| 251    | REDE em tensão abaixo de 190V                                                                                     |
-| 252    | REDE em tensão alta > 264V                                                                                     |
+| 203    | SIMCON offline, sem conexão (30+ minutos)                                                            |
+| 204    | SIMCON offline, sem conexão (60+ minutos)                                                            |
+| 205    | SIMCOM em bateria                                                                                    |
+| 251    | REDE em tensão abaixo de 190V                                                                        |
+| 252    | REDE em tensão alta > 264V                                                                           |
 
 ## Detalhamento do Status
 **1 - LUMINÁRIA acesa durante o dia**
@@ -138,8 +173,5 @@ Queima da fonte interna por ocorrência de surtos elétricos;
 
 **252 - REDE em tensão alta > 264V**
 
-
-
-
 ## Nota importante
-Nesta versão não será solicitado o envio de token de acesso.
+O envio do token de acesso é obrigatório para este endpoint.
