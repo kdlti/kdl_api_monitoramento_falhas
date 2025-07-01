@@ -34,7 +34,7 @@ token = resp.json()["token"]
 
 # Consulta de falhas
 headers = {"Authorization": f"Bearer {token}"}
-resp = requests.get("https://simcidadesinteligentes.com.br:44300/lista-falhas/v1/maua", headers=headers)
+resp = requests.get("https://simcidadesinteligentes.com.br:44300/lista-falhas/v1/cidade", headers=headers)
 print(resp.json())
 ```
 
