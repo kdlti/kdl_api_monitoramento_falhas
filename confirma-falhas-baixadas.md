@@ -13,7 +13,7 @@ Esta regra visa preservar a ordem e eficácia do sistema de monitoramento, de mo
 
 | Método | URI                                         | Exemplo                                                                 |
 |--------|---------------------------------------------|:------------------------------------------------------------------------|
-| POST   | `/confirma-falhas-baixadas/v1/sua_cidade`         | https://simcidadesinteligentes.com.br:44300/confirma-falhas-baixadas/v1/sua_cidade |
+| POST   | `/confirma-falhas-baixadas/v1/cidade`         | https://simcidadesinteligentes.com.br:44300/confirma-falhas-baixadas/v1/cidade |
 
 ## Autenticação
 
@@ -45,7 +45,7 @@ headers = {
 
 # fazer a requisição POST
 response = requests.post(
-    url="https://simcidadesinteligentes.com.br:44300/confirma-falhas-baixadas/v1/sua_cidade",
+    url="https://simcidadesinteligentes.com.br:44300/confirma-falhas-baixadas/v1/cidade",
     data=jsonData,
     headers=headers
 )

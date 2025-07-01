@@ -7,7 +7,7 @@ Este endpoint é responsável pela entrega de informações das peças que apres
 
 | Método | URI                          | Exemplo                                                                 |
 | ------ |------------------------------|:------------------------------------------------------------------------|
-| GET    | `/lista-falhas/v1/maua`      | https://simcidadesinteligentes.com.br:44300/lista-falhas/v1/maua        |
+| GET    | `/lista-falhas/v1/cidade`      | https://simcidadesinteligentes.com.br:44300/lista-falhas/v1/cidade        |
 
 ## Autenticação
 
@@ -34,7 +34,7 @@ params = {
 }
 
 response = requests.get(
-    url="https://simcidadesinteligentes.com.br:44300/lista-falhas/v1/maua",
+    url="https://simcidadesinteligentes.com.br:44300/lista-falhas/v1/cidade",
     headers=headers,
     params=params
 )
