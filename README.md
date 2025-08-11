@@ -6,15 +6,30 @@ Este repositório contém a documentação e exemplos de uso da **API de Integra
 
 - [Descrição](#descrição)
 - [Pré-requisitos](#pré-requisitos)
-- [Autenticação](autenticacao.md)
-- [Lista de Falhas](lista-falhas.md)
-- [Confirmação de Falhas Baixadas](confirma-falhas-baixadas.md)
+- [Endpoints Disponíveis](#endpoints-disponíveis)
 - [Exemplo de Uso Rápido](#exemplo-de-uso-rápido)
 - [Contato](#contato)
 
+## Endpoints Disponíveis
+
+### Autenticação
+- [Autenticação](autenticacao.md) - Como obter e usar tokens de acesso
+
+### Falhas
+- [Lista de Falhas](lista-falhas.md) - Consulta de falhas no sistema
+- [Confirmação de Falhas Baixadas](confirma-falhas-baixadas.md) - Confirmar resolução de falhas
+
+### Concentradores (SIMCON)
+- [Lista de SIMCONs](lista-simcons.md) - Lista todos os concentradores
+- [Detalhes do SIMCON](detalhes-simcon.md) - Informações detalhadas de um concentrador específico
+
+### Unidades (SIMUC)
+- [Lista de SIMUCs](lista-simucs.md) - Lista todas as unidades de controle
+- [Detalhes do SIMUC](detalhes-simuc.md) - Informações detalhadas de uma unidade específica
+
 ## Descrição
 
-A API permite consultar e atualizar o status de falhas em dispositivos de telegestão, facilitando o monitoramento e a manutenção dos equipamentos.
+A API permite consultar e atualizar o status de falhas em dispositivos de telegestão, além de gerenciar informações de concentradores (SIMCON) e unidades de controle (SIMUC), facilitando o monitoramento e a manutenção dos equipamentos de iluminação pública.
 
 ## Pré-requisitos
 
@@ -46,6 +61,17 @@ Dúvidas ou suporte: [suporte@kdliluminacao.com.br](mailto:suporte@kdliluminacao
 
 Consulte os arquivos de documentação para mais detalhes:
 
+### Autenticação
 - [Autenticação](autenticacao.md)
+
+### Falhas
 - [Lista de Falhas](lista-falhas.md)
 - [Confirmação de Falhas Baixadas](confirma-falhas-baixadas.md)
+
+### Concentradores (SIMCON)
+- [Lista de SIMCONs](lista-simcons.md)
+- [Detalhes do SIMCON](detalhes-simcon.md)
+
+### Unidades (SIMUC)
+- [Lista de SIMUCs](lista-simucs.md)
+- [Detalhes do SIMUC](detalhes-simuc.md)
