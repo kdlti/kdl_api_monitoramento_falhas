@@ -115,19 +115,27 @@ O parâmetro offset é usado para permitir a paginação dos resultados. Ele esp
 
 
 ##### Bloco Código de Status:
-| Status | Descrição                                                                                            | 
-|:-------|:-----------------------------------------------------------------------------------------------------| 
-| 1      | LUMINÁRIA acesa durante o dia                                                                        |
-| 2      | LUMINÁRIA apagada durante a noite                                                                    | 
-| 4      | LUMINÁRIA com queda de potência                                                                      |
-| 5      | LUMINÁRIA com falha e defeito                                                                        |
-| 51     | SIMUC sem comunicação (evento informado a cada 6h)                                                   | 
-| 52     | SIMUC sem leituras coletadas desde a instalação (evento informado a cada 6h, após 48h da instalação) | 
-| 203    | SIMCON offline, sem conexão (30+ minutos)                                                            |
-| 204    | SIMCON offline, sem conexão (60+ minutos)                                                            |
-| 205    | SIMCOM em bateria                                                                                    |
-| 251    | REDE em tensão abaixo de 190V                                                                        |
-| 252    | REDE em tensão alta > 264V                                                                           |
+| Status | Descrição |
+|--------|-----------|
+| 1 | LUMINÁRIA acesa durante o dia |
+| 2 | LUMINÁRIA apagada durante a noite |
+| 4 | LUMINÁRIA com queda de potência |
+| 5 | LUMINÁRIA com falha e defeito |
+| 6 | Luminária Ligado |
+| 7 | Luminária Desligado |
+| 8 | Luminária Dimerizado |
+| 51 | SIMUC sem comunicação (evento informado a cada 6h) |
+| 52 | SIMUC sem leituras coletadas desde a instalação (evento informado a cada 6h, após 48h da instalação) |
+| 203 | SIMCON offline, sem conexão (30+ minutos) |
+| 204 | SIMCON offline, sem conexão (60+ minutos) |
+| 205 | SIMCOM em bateria |
+| 251 | REDE em tensão abaixo de 190V |
+| 252 | REDE em tensão alta > 264V |
+| 253 | SIMCON Online Chip 1 |
+| 254 | SIMCON Online Chip 2 |
+| 255 | SIMCON Cabeado |
+| 256 | SIMCON Offline |
+| 257 | SIMCON Cadastrado |
 
 ## Detalhamento do Status
 **1 - LUMINÁRIA acesa durante o dia**
