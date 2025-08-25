@@ -10,12 +10,12 @@ Este endpoint permite executar comandos em unidades SIMUC de forma híbrida: exe
 ### 1. Execução de Comandos (Híbrido)
 | Método | URI                              | Exemplo                                                                 |
 | ------ |----------------------------------|:------------------------------------------------------------------------|
-| POST   | `/comandos-simuc/{version}`      | httpss://url/comandos-simuc/v1                                            |
+| POST   | `/comandos-simuc/{version}`      | https://url/comandos-simuc/v1                                            |
 
 ### 2. Consulta Status do Batch
 | Método | URI                                      | Exemplo                                                                 |
 | ------ |------------------------------------------|:------------------------------------------------------------------------|
-| GET    | `/comandos-simuc-batch/{version}/{id}`   | httpss://url/comandos-simuc-batch/v1/batch_20250820_143022_abc123         |
+| GET    | `/comandos-simuc-batch/{version}/{id}`   | https://url/comandos-simuc-batch/v1/batch_20250820_143022_abc123         |
 
 ## Autenticação
 
@@ -66,7 +66,7 @@ comando_data = {
 }
 
 response = requests.post(
-    url="httpss://url/comandos-simuc/v1",
+    url="https://url/comandos-simuc/v1",
     headers=headers,
     json=comando_data
 )
@@ -140,7 +140,7 @@ batch_data = {
 }
 
 response = requests.post(
-    url="httpss://url/comandos-simuc/v1",
+    url="https://url/comandos-simuc/v1",
     headers=headers,
     json=batch_data
 )
@@ -185,7 +185,7 @@ headers = {
 
 batch_id = "batch_20250820_143022_abc123"
 response = requests.get(
-    url=f"httpss://url/comandos-simuc-batch/v1/{batch_id}",
+    url=f"https://url/comandos-simuc-batch/v1/{batch_id}",
     headers=headers
 )
 
@@ -299,12 +299,24 @@ print(response.json())
 | `erro`    | Falha na execução do comando                 |
 
 ### Códigos de Comando
-| Código | Descrição                                    |
-|:-------|:---------------------------------------------|
-| 5      | Acende                                       |
-| 6      | Apaga                                        |
-| 7      | Pisca                                        |
-| 8      | Dimmer                                       |
+| Código | Descrição                                                                                         |
+|:-------|:--------------------------------------------------------------------------------------------------|
+| 1      | Ler status completo                                                                               |
+| 3      | Programação do horário do turno de acendimento/apagamento                                        |
+| 4      | Apaga                                                                                             |
+| 5      | Acende                                                                                            |
+| 9      | Habilita turno horário programado                                                                 |
+| 10     | Desabilita turno horário programado                                                               |
+| 11     | Desligar dimmer                                                                                   |
+| 13     | Lê status resumido                                                                                |
+| 14     | Habilita sensor de luz                                                                            |
+| 15     | Desabilita o sensor de luz                                                                        |
+| 16     | Habilita turno do dimmer                                                                          |
+| 17     | Desabilita turno do dimmer                                                                        |
+| 18     | Programa horário do turno do dimmer                                                               |
+| 19     | Liga dimmer                                                                                       |
+| 20     | Leitura das configurações                                                                         |
+| 29     | Definir nível de dimmer (dados: 30=0, 40=1, 50=2, 60=3, 70=4, 80=5, 90=6)                      |
 
 ### Códigos de Resposta/Alertas
 | Código | Descrição                                                                                         |
