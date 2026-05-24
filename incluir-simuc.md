@@ -210,7 +210,7 @@ print(response.json())
 | 2      | ✅ SIMUC incluído com sucesso                      |
 | 3      | ✅ SIMUC incluído com sucesso (com etiqueta)       |
 
-### Status de Operação
+### Status de Operação 
 | Status    | Descrição                                    |
 |:----------|:---------------------------------------------|
 | `sucesso` | Operação executada com sucesso               |
