@@ -30,6 +30,7 @@ Este repositório contém a documentação e exemplos de uso da **API de Integra
 - [Incluir SIMUC](incluir-simuc.md) - Inclusão de novas unidades SIMUC (com suporte a etiquetas)
 - [Editar SIMUC](editar-simuc.md) - Edição de unidades SIMUC (com suporte a etiquetas)
 - [Deletar SIMUC](deletar-simuc.md) - Remoção de unidades SIMUC (tratamento de etiqueta no fluxo de exclusão)
+- [Substituir SIMUC](subsituir-simuc.md) - Substituição de unidades SIMUC.
 - [Comandos SIMUC](comandos-simuc.md) - Execução de comandos em unidades SIMUC (único ou batch)
 
 ## Descrição
