@@ -84,4 +84,5 @@ Consulte os arquivos de documentação para mais detalhes:
 - [Incluir SIMUC](incluir-simuc.md)
 - [Editar SIMUC](editar-simuc.md)
 - [Deletar SIMUC](deletar-simuc.md)
+- [Substituir SIMUC](substituir-simuc.md)
 - [Comandos SIMUC](comandos-simuc.md)
